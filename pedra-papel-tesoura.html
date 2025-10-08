@@ -122,6 +122,13 @@
         }
         }
 
+              const moveToImage = {
+        'Pedra': 'rock',
+        'Papel': 'paper',
+        'Tesoura': 'scissors'
+      };
+
+
         if (result === 'Você ganhou!') {
           score.ganhos += 1;
         } else if (result === 'Você perdeu!') {
@@ -139,8 +146,8 @@
 
         document.querySelector('.js-moves').
         innerHTML = `You
-      <img src="/images/${playerMove}-emoji.png" class="move-icon">
-      <img src="/images/${computerMove}-emoji.png" class="move-icon">
+      <img src="images/${moveToImage[playerMove]}-emoji.png" class="move-icon">
+      <img src="images/${moveToImage[computerMove]}-emoji.png" class="move-icon">
       Computer `;
 
       }
