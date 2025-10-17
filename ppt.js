@@ -19,9 +19,16 @@
           playGame(playerMove);
         }, 1000);
         isAutoPlaying = true;
+
+        document.querySelector('.js-autoplay-button')
+          .innerHTML = 'Parar jogo';
+
         } else {
           clearInterval(intervalId);
           isAutoPlaying = false;
+          
+          document.querySelector('.js-autoplay-button')
+            .innerHTML = 'Jogo Automático';
         }};
 
         document.querySelector('.js-rock-button')
@@ -40,9 +47,22 @@
         });
 
         document.querySelector('.js-autoplay-button')
+        
         .addEventListener('click', () => {
           autoPlay();
         });
+
+
+        document.body.addEventListener('keydown', (event) => {
+          if (event.key === 'p'){
+            playGame('Pedra');
+          } else if (event.key === 'f') {
+            playGame('Papel');
+          } else if (event.key === 't') {
+            playGame('Tesoura');
+          }
+        });
+
 
       function playGame(playerMove) {
         const computerMove = pickComputerMove();
