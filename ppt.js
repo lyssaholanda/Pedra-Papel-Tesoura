@@ -39,6 +39,11 @@
           playGame('Tesoura');
         });
 
+        document.querySelector('.js-autoplay-button')
+        .addEventListener('click', () => {
+          autoPlay();
+        });
+
       function playGame(playerMove) {
         const computerMove = pickComputerMove();
 
