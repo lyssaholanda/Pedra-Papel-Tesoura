@@ -22,10 +22,22 @@
         } else {
           clearInterval(intervalId);
           isAutoPlaying = false;
-        }
-        
+        }};
 
-      }
+        document.querySelector('.js-rock-button')
+        .addEventListener('click', () => {
+          playGame('Pedra');
+        });
+
+        document.querySelector('.js-paper-button')
+        .addEventListener('click', () => {
+          playGame('Papel');
+        });
+
+        document.querySelector('.js-tesoura-button')
+        .addEventListener('click', () => {
+          playGame('Tesoura');
+        });
 
       function playGame(playerMove) {
         const computerMove = pickComputerMove();
