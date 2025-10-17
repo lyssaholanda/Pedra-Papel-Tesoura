@@ -60,8 +60,11 @@
             playGame('Papel');
           } else if (event.key === 't') {
             playGame('Tesoura');
+          } else if(event.key === 'a'){
+            autoPlay();
           }
         });
+
 
 
       function playGame(playerMove) {
@@ -147,7 +150,7 @@
         }
 
         return computerMove;
-        
+    
       }
 
       
